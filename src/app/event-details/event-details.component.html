@@ -1,0 +1,71 @@
+<div class="banner">
+	<h1>{{ title.banner }}</h1>
+</div>
+<div class="main">
+	<h2>{{ title.subtitle }}</h2>
+	<div class="header">
+		<img src="{{ event.logo_url }}" alt="" />
+		<div class="header-details">
+			<div class="date">
+				<div class="month"></div>
+				{{ event.start | date: 'MMM' }}.
+			</div>
+			<div class="day">{{ event.start | date: 'dd' }}</div>
+			<h3>{{ event.name }}</h3>
+			<div class="company">
+				von <a href="">{{ event.organizor }}</a>
+			</div>
+			<div class="visitors"></div>
+			<div class="price">{{ event.price }}</div>
+		</div>
+	</div>
+	<div class="register">
+		<button id="register" mat-raised-button color="primary">Registrieren</button>
+	</div>
+	<div class="content">
+		<div class="article">
+			<h2>Zu diesem Event</h2>
+			<p>{{event.description}}</p>
+			<h3></h3>
+			<div class="mentor-card" *ngFor="let mentor of mentors">
+				<div class="col1">
+					<img src="{{ mentor.avatar }}" alt="{{ mentor.name }}" />
+
+					<div class="mentor-id">{{ mentor.id }}</div>
+					<div class="mentor-name">{{ mentor.name }}</div>
+					<div class="mentor-job">{{ mentor.job }}</div>
+				</div>
+				<div class="col2">
+					<h4>Interessen</h4>
+					<mat-chip-list>
+						<mat-chip *ngFor="let skill of mentor.skills">{{ skill }}</mat-chip>
+					</mat-chip-list>
+				</div>
+				<div class="col3">
+					<button mat-button color="light">Profil anzeigen</button>
+					<button mat-button color="primary">Als Mentorin anfragen</button>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar">
+			<div class="date">
+				<mat-icon>calendar</mat-icon>
+				<h3>Datum und Uhrzeit</h3>
+				<div class="date-time">{{ event.start }}</div>
+				<div class="date-time">{{ event.end }}</div>
+			</div>
+			<div class="location">
+				<mat-icon>location</mat-icon>
+				<p>{{ event.venue_location_summary }}</p>
+				<a href="">Karte anzeigen</a>
+			</div>
+			<div class="tags">
+				<mat-icon>tags</mat-icon>
+				<h3>Tags</h3>
+				<mat-chip-list>
+					<mat-chip *ngFor="let tag of event.tags">{{ tag }}</mat-chip>
+				</mat-chip-list>
+			</div>
+		</div>
+	</div>
+</div>

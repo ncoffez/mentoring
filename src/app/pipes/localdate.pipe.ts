@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class LocaldatePipe implements PipeTransform {
 	transform(datestring: string): string {
 		const date: Date = new Date(datestring);
-        console.log(date);
 		const options: any = {
 			weekday: 'short',
 			day: 'numeric',

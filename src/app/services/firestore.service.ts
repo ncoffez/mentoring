@@ -24,7 +24,7 @@ export class FirestoreService {
 	};
 
 	mentor = {
-		list: () => console.log('Lists all mentors.'), //TODO
+		list: () => this.listDocs('mentors'),
 	};
 
 	event = {

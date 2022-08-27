@@ -25,6 +25,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LocaldatePipe } from './pipes/localdate.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
+import { EventDetailsComponent } from './event-details/event-details.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
@@ -40,11 +42,22 @@ export const auth = getAuth(app);
 		EventBannerComponent,
 		RoleModelsComponent,
 		AboutComponent,
-  LocaldatePipe,
-  DurationPipe,
+		LocaldatePipe,
+		DurationPipe,
+		EventDetailsComponent,
 	],
 
-	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatSnackBarModule, MatButtonModule, MatInputModule, MatMenuModule, MatIconModule],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MatSnackBarModule,
+		MatButtonModule,
+		MatInputModule,
+		MatMenuModule,
+		MatIconModule,
+        MatChipsModule
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })
