@@ -50,7 +50,11 @@ export class FirestoreService {
 
 				// Add user to DB if not existing
 				const userShort = { name: user.displayName, uid: user.uid, email: user.email, avatar: user.photoURL };
-				if (!this.user.get(user.uid)) this.user.add(userShort);
+				try {
+					await this.user.get(user.uid);
+				} catch (error) {
+					this.user.add(userShort);
+				}
 				return userShort;
 			})
 			.catch((error) => {
