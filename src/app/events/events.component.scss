@@ -24,14 +24,21 @@
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 1em 5em;
+	gap: 3em;
 }
 
 .event-card {
-    display: flex;
-    flex-direction: column;
-	border: 1px solid #50425C;
-    height: 350px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #50425c;
+	height: 20em;
+
+	.content {
+		padding: 1em;
+		height: 100%;
+        display: flex;
+        flex-direction: column;
+	}
 
 	img {
 		width: 100%;
@@ -39,20 +46,33 @@
 		height: 10em;
 	}
 
-    h4 {
-        font-weight: 400;
-    }
+	h4 {
+		font-weight: 400;
+		margin: 0 0 0.5em 0;
+	}
 
 	.footer {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-top: auto;
+		font-size: 0.8em;
 	}
 
-    button {
-        width: 100%;
-        background-color: #50425C;
-        color: white;
-        border-radius: 0;
-        margin-top: auto;
-    }
+	.card-date {
+		display: block;
+		color: #d1410c;
+	}
+
+	.card-location, .preis {
+		display: block;
+		color: #6f7287;
+	}
+
+	button {
+		width: 100%;
+		background-color: #50425c;
+		color: white;
+		border-radius: 0;
+	}
 }

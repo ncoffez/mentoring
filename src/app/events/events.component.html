@@ -5,11 +5,16 @@
 	<h2>{{ title.subtitle }}</h2>
 	<div class="event-list">
 		<div class="event-card" *ngFor="let event of events">
-			<img src="{{ event.logo.url }}" alt="{{ event.name.text }}" />
-			<h4>{{ event.name.text }}</h4>
-			<div class="footer">
-				<div class="card-date">{{ event.start.local | localdate}}</div>
-				<div class="card-location">{{ event.end.local | localdate}}</div>
+			<img src="{{ event.logo_url }}" alt="{{ event.name }}" />
+			<div class="content">
+				<h4>{{ event.name }}</h4>
+				<div class="footer">
+					<div class="card-date">{{ event.start | localdate }}</div>
+					<div class="rechts">
+						<div class="card-location">{{ event.venue_location_summary }}</div>
+						<div class="preis">{{ event.price }}</div>
+					</div>
+				</div>
 			</div>
 			<button mat-button class="card-action" routerLink="/Events/{{event">Details</button>
 		</div>

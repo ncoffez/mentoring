@@ -10,9 +10,10 @@ body {
 
 .main {
     max-width: 1200px;
+    min-height: 130vh;
     padding: 2em;
     margin-inline: auto;
 }
 
-html, body { height: 100%; }
+html, body { height: 100% }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
