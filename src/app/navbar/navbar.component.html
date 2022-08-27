@@ -6,9 +6,9 @@
 		</li>
 	</ul>
 	<div class="avatar" *ngIf="user" (click)="logout()">
-		<img class="avatar-img" [src]="user.avatar" [alt]="user.name" referrerpolicy="no-referrer" />
+		<img class="avatar-img" [src]="user.avatar" [alt]="user.name" />
 	</div>
 	<div class="placeholder-avatar" *ngIf="!user" (click)="login()">
-		<mat-icon size="large" *ngIf="!user">person_circle</mat-icon>
+		<button mat-raised-button color="primary">Login</button>
 	</div>
 </content>

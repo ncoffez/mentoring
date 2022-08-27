@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
 
 	async login() {
         await this.fs.auth.login();
-        this.user = this.fs.auth.current();
+        this.user = await this.fs.auth.current();
 	}
 
     logout(): any {

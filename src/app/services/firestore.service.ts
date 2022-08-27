@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuthProvider, signOut, signInWithPopup } from 'firebase/auth';
-import { addDoc, doc, DocumentData, getDoc, collection } from 'firebase/firestore';
+import { addDoc, doc, DocumentData, getDoc, collection, setDoc, updateDoc, query, getDocs } from 'firebase/firestore';
 import { auth, db } from 'src/app/app.module';
 
 @Injectable({
@@ -12,9 +12,9 @@ export class FirestoreService {
 
 	user = {
 		get: (uid: string) => this.getDoc(uid, 'users'),
-		list: () => console.log('user.list called.'), //TODO
-		set: (uid: string, attribute: string, data: any[]) => console.log('Adding data to user.'), //TODO
-		add: (data: any) => this.write('users', data),
+		list: () => this.listDocs('users'),
+		set: (uid: string, key: string, value: any) => this.setDoc('users', uid, key, value),
+		add: (data: any) => this.createUser(data),
 	};
 
 	auth = {
@@ -58,7 +58,7 @@ export class FirestoreService {
 
 				// Add user to DB if not existing
 				const userShort = { name: user.displayName, uid: user.uid, email: user.email, avatar: user.photoURL };
-				if(!this.user.get(user.uid)) this.user.add(userShort);
+				if (!this.user.get(user.uid)) this.user.add(userShort);
 				return userShort;
 			})
 			.catch((error) => {
@@ -74,19 +74,19 @@ export class FirestoreService {
 
 	async getCurrentUser(): Promise<any> {
 		const user: any = auth.currentUser;
-		if (user) try{
-            console.log('Before getUser');
-            let userDB = await this.user.get(user.uid);
-            console.log('After getUser');
-            return userDB;
-		}
-        catch {
-            return {'name': user.displayName, 'avatar': user.avatar, 'email': user.email, 'uid': user.uid}
-        }
+		if (user)
+			try {
+				console.log('Before getUser');
+				let userDB = await this.user.get(user.uid);
+				console.log('After getUser');
+				return userDB;
+			} catch {
+				return { name: user.displayName, avatar: user.avatar, email: user.email, uid: user.uid };
+			}
 	}
 
 	async getDoc(uid: string, collection: string): Promise<DocumentData> {
-        console.log(`Searching user ${uid}...`)
+		console.log(`Searching user ${uid}...`);
 		const docRef = doc(db, collection, uid);
 		const docSnap = await getDoc(docRef);
 		if (!docSnap.exists()) {
@@ -95,22 +95,25 @@ export class FirestoreService {
 		return docSnap.data();
 	}
 
-	write(inputCollection: string, data: any) {
-		switch (typeof data) {
-			case 'object':
-				addDoc(collection(db, inputCollection), data);
-				break;
+	async createUser(user: any) {
+		return await setDoc(doc(db, 'users', user.uid), user);
+	}
 
-			case 'string':
-				try {
-					const importArray: object[] = JSON.parse(data);
-					importArray.forEach((obj) => {
-						addDoc(collection(db, inputCollection), obj);
-					});
-				} catch {
-					const importObject = JSON.parse(data);
-					addDoc(collection(db, inputCollection), importObject);
-				}
-		}
+	async setDoc(type: string, uid: string, key: string, value: any): Promise<any> {
+		const docRef = doc(db, type, uid);
+		return await updateDoc(docRef, { [key]: value });
+	}
+
+	async listDocs(type: string): Promise<any[]> {
+		const q = query(collection(db, type));
+		const querySnapshot = await getDocs(q);
+		return new Promise((resolve, reject) => {
+			const foundDocs: any[] = [];
+			querySnapshot.forEach((doc) => foundDocs.push({ id: doc.id, ...doc.data() }));
+			if (foundDocs == []) {
+				reject('No Documents found.');
+			}
+			resolve(foundDocs);
+		});
 	}
 }
