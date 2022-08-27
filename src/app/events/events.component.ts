@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import events_mock from 'src/mock/event.json'; 
-
+import events_mock from 'src/mock/event.json';
 
 @Component({
 	selector: 'app-events',
@@ -9,11 +8,15 @@ import events_mock from 'src/mock/event.json';
 	styleUrls: ['./events.component.scss'],
 })
 export class EventsComponent implements OnInit {
+	title = {
+		banner: 'Events',
+		subtitle: 'Nächstes Event',
+	};
+
 	events = Object.values(events_mock.events);
-	//events = null;
 	constructor() {}
- 
-	ngOnInit(): void {	
+
+	ngOnInit(): void {
 		/*
 		var url = "https://www.eventbriteapi.com/v3/events/?event_ids=308606629737,324854607877,331078503717,261358098107";
 

@@ -1,9 +1,17 @@
+<div class="banner">
+	<h1>{{ title.banner }}</h1>
+</div>
 <div class="main">
-	<div class="event_card" *ngFor="let item of events">
-		<div class="header">{{item.name.text}}</div>
-		<img src="{{item.logo.url}}" width="80px" />
-		<div class="start">{{item.start.local}}</div>
-		<div class="end">{{item.end.local}}</div>
-		
+	<h2>{{ title.subtitle }}</h2>
+	<div class="event-list">
+		<div class="event-card" *ngFor="let event of events">
+			<img src="{{ event.logo.url }}" alt="{{ event.name.text }}" />
+			<h4>{{ event.name.text }}</h4>
+			<div class="footer">
+				<div class="card-date">{{ event.start.local | localdate}}</div>
+				<div class="card-location">{{ event.end.local | localdate}}</div>
+			</div>
+			<button mat-button class="card-action" routerLink="/Events/{{event">Details</button>
+		</div>
 	</div>
 </div>

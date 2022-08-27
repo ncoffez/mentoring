@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { LocaldatePipe } from './pipes/localdate.pipe';
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
@@ -38,6 +39,7 @@ export const auth = getAuth(app);
 		EventBannerComponent,
 		RoleModelsComponent,
 		AboutComponent,
+  LocaldatePipe,
 	],
 
 	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatSnackBarModule, MatButtonModule, MatInputModule, MatMenuModule, MatIconModule],

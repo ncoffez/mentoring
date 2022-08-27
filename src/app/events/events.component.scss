@@ -1,0 +1,58 @@
+.banner {
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Events_Banner.jpeg');
+	background-color: #cccccc;
+	width: 100%;
+	height: 250px;
+	text-align: center;
+	background-size: cover;
+	justify-content: center;
+	display: flex;
+	background-blend-mode: darken;
+	background-position: center;
+
+	h1 {
+		text-transform: uppercase;
+		display: block;
+		color: white;
+		font-weight: bold;
+		margin-block: auto;
+		font-size: 2.2em;
+	}
+}
+
+.event-list {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em 5em;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+	border: 1px solid #50425C;
+    height: 350px;
+
+	img {
+		width: 100%;
+		object-fit: cover;
+		height: 10em;
+	}
+
+    h4 {
+        font-weight: 400;
+    }
+
+	.footer {
+		display: flex;
+		flex-direction: column;
+	}
+
+    button {
+        width: 100%;
+        background-color: #50425C;
+        color: white;
+        border-radius: 0;
+        margin-top: auto;
+    }
+}
