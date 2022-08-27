@@ -5,40 +5,43 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { firebaseConfig} from '../environments/environment';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EventsComponent } from './events/events.component';
-import { UserComponent } from './user/user.component';
-import { EventDetailComponent } from './event-detail/event-detail.component';
 import { UsercardComponent } from './components/usercard/usercard.component';
 import { EventBannerComponent } from './components/event-banner/event-banner.component';
-import { HowToComponent } from './how-to/how-to.component';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { RoleModelsComponent } from './role-models/role-models.component';
+import { AboutComponent } from './about/about.component';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
-// Your web app's Firebase configuration
-
+// Import the angular Material commands
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    EventsComponent,
-    UserComponent,
-    EventDetailComponent,
-    UsercardComponent,
-    EventBannerComponent,
-    HowToComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		NavbarComponent,
+		EventsComponent,
+		UsercardComponent,
+		EventBannerComponent,
+		RoleModelsComponent,
+		AboutComponent,
+	],
+
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatSnackBarModule, MatButtonModule, MatInputModule, MatMenuModule, MatIconModule],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

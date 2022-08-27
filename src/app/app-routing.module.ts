@@ -1,39 +1,47 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { EventsComponent } from './events/events.component';
+import { RoleModelsComponent } from './role-models/role-models.component';
+import { SponsoringComponent } from './sponsoring/sponsoring.component';
 
-// const routerOptions: ExtraOptions = {
-// 	relativeLinkResolution: 'corrected',
-// 	scrollPositionRestoration: 'enabled',
-// 	initialNavigation: 'enabledBlocking',
-// };
+const routerOptions: ExtraOptions = {
+	relativeLinkResolution: 'corrected',
+	scrollPositionRestoration: 'enabled',
+	initialNavigation: 'enabledBlocking',
+};
 
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'Events',
-		pathMatch: 'full',
+        component: EventsComponent,
 	},
 	{
-		path: 'Howto',
-		loadChildren: () => import('./how-to/how-to.component').then((m) => m.HowToComponent),
+		path: 'RoleModels',
+        component: RoleModelsComponent,
 	},
 	{
 		path: 'Events',
-		loadChildren: () => import('./events/events.component').then((m) => m.EventsComponent),
+        component: EventsComponent
+	},
+	{
+		path: 'Sponsoring',
+        component: SponsoringComponent
+	},
+	{
+		path: 'About',
+        component: AboutComponent
 	},
 	// {
 	// 	path: 'Events/:id',
-	// 	loadChildren: () => import('./event-detail/event-detail.component').then((m) => m.EventDetailComponent),
 	// },
 	// {
 	// 	path: 'User/:id',
-	// 	loadChildren: () => import('./user/user.component').then((m) => m.UserComponent),
 	// },
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

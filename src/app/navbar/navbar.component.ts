@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+    pages = [
+        {name: "Home", link: "/"},
+        {name: "Events", link: "/Events"},
+        {name: "Role Models", link: "/RoleModels"},
+        {name: "Sponsoring", link: "/Sponsoring"},
+        {name: "Über uns", link: "/About"},
+    ]
 
   constructor() { }
 

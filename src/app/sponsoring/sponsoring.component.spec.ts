@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HowToComponent } from './how-to.component';
+import { SponsoringComponent } from './sponsoring.component';
 
-describe('HowToComponent', () => {
-  let component: HowToComponent;
-  let fixture: ComponentFixture<HowToComponent>;
+describe('SponsoringComponent', () => {
+  let component: SponsoringComponent;
+  let fixture: ComponentFixture<SponsoringComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HowToComponent ]
+      declarations: [ SponsoringComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HowToComponent);
+    fixture = TestBed.createComponent(SponsoringComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

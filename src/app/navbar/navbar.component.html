@@ -1,13 +1,27 @@
 <content>
-    <div><img src="assets/BeLikeGrace.png" alt="Be like Grace"/>
-    </div>
-    <ul>
-        <li><a href="/Home">Home</a></li>
-        <li><a href="/Events">Events</a></li>
-        <li><a href="/Howto">How To</a></li>
-    </ul>
-    <div id="icon">
-        <img src="assets/icons/person-circle.svg" alt="Profile"/>
-        Bild
-    </div>
+	<div id="logo"><img src="assets/BeLikeGrace.png" alt="Be like Grace" /></div>
+	<ul id="menu">
+		<li *ngFor="let page of pages">
+			<a routerLink="{{ page.link }}">{{ page.name }}</a>
+		</li>
+	</ul>
+	<div id="user">
+		<button mat-icon-button [matMenuTriggerFor]="menu" yPosition="above">
+			<mat-icon>account_circle</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item>
+				<mat-icon>login</mat-icon>
+				<span>Einloggen</span>
+			</button>
+			<button mat-menu-item>
+				<mat-icon>logout</mat-icon>
+				<span>Ausloggen</span>
+			</button>
+			<button mat-menu-item>
+				<mat-icon>settings</mat-icon>
+				<span>Einstellungen</span>
+			</button>
+		</mat-menu>
+	</div>
 </content>
