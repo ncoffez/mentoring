@@ -1,3 +1,9 @@
 <div class="main">
-	<p>events works!</p>
+	<div class="event_card" *ngFor="let item of events">
+		<div class="header">{{item.name.text}}</div>
+		<img src="{{item.logo.url}}" width="80px" />
+		<div class="start">{{item.start.local}}</div>
+		<div class="end">{{item.end.local}}</div>
+		
+	</div>
 </div>
