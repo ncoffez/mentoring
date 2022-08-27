@@ -25,6 +25,7 @@ export class FirestoreService {
 
 	mentor = {
 		list: () => this.listDocs('mentors'),
+		get: (uid: string) => this.getDoc(uid, 'mentors'),
 	};
 
 	event = {

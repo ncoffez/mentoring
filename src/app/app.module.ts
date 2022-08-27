@@ -27,6 +27,7 @@ import { LocaldatePipe } from './pipes/localdate.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { MentorDetailsComponent } from './mentor-details/mentor-details.component';
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
@@ -45,6 +46,7 @@ export const auth = getAuth(app);
 		LocaldatePipe,
 		DurationPipe,
 		EventDetailsComponent,
+  MentorDetailsComponent,
 	],
 
 	imports: [

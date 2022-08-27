@@ -1,0 +1,22 @@
+<div class="banner">
+    <h1>{{ title.banner }}</h1>
+</div>
+<div class="main">
+    <h2>{{ title.subtitle }}</h2>
+    <div class="header">
+        <img src="{{ mentor.avatar }}" alt="" />
+        <div class="col2">
+            <h3>{{mentor.name}}</h3>
+            <p>{{mentor.job}}</p>
+        </div>
+        <div class="col3">{{mentor.pitch}}</div>
+    </div>
+    <hr/>
+    <div class="skills">
+        <h4>Interessen</h4>
+        <mat-chip-list>
+            <mat-chip *ngFor="let skill of mentor.skills">{{ skill }}</mat-chip>
+        </mat-chip-list>
+    </div>
+    <img src="assets/dummy_profile_part.png" />
+</div>
