@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuthProvider, signOut, signInWithPopup } from 'firebase/auth';
-import { auth } from 'src/app/app.module';
+import { addDoc, doc, DocumentData, getDoc, collection } from 'firebase/firestore';
+import { auth, db } from 'src/app/app.module';
 
 @Injectable({
 	providedIn: 'root',
@@ -10,17 +11,14 @@ export class FirestoreService {
 	constructor() {}
 
 	user = {
-		get: (uid: string) => console.log('user.get called.'), //TODO
+		get: (uid: string) => this.getDoc(uid, 'users'),
 		list: () => console.log('user.list called.'), //TODO
 		set: (uid: string, attribute: string, data: any[]) => console.log('Adding data to user.'), //TODO
-		add: (data: any[]) => console.log('New user created.'), //TODO
+		add: (data: any) => this.write('users', data),
 	};
 
 	auth = {
-		logout: () => {
-			signOut(auth);
-			console.log('😊 logged out.');
-		},
+		logout: () => signOut(auth),
 		login: () => this.userLogin(),
 		current: () => this.getCurrentUser(),
 	};
@@ -49,7 +47,7 @@ export class FirestoreService {
 
 	async userLogin(): Promise<any> {
 		await signInWithPopup(auth, this.provider)
-			.then((result) => {
+			.then(async (result) => {
 				// This gives you a Google Access Token. You can use it to access the Google API.
 				const credential = GoogleAuthProvider.credentialFromResult(result);
 				const token = credential?.accessToken;
@@ -57,7 +55,11 @@ export class FirestoreService {
 				// The signed-in user info.
 				const user = result.user;
 				console.log('😊 logged in.');
-				return user;
+
+				// Add user to DB if not existing
+				const userShort = { name: user.displayName, uid: user.uid, email: user.email, avatar: user.photoURL };
+				if(!this.user.get(user.uid)) this.user.add(userShort);
+				return userShort;
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -70,15 +72,45 @@ export class FirestoreService {
 			});
 	}
 
-	getCurrentUser(): any {
+	async getCurrentUser(): Promise<any> {
 		const user: any = auth.currentUser;
-		if (user) {
-			return {
-				name: user.displayName,
-				uid: user.uid,
-				email: user.email,
-				avatar: user.photoURL,
-			};
+		if (user) try{
+            console.log('Before getUser');
+            let userDB = await this.user.get(user.uid);
+            console.log('After getUser');
+            return userDB;
+		}
+        catch {
+            return {'name': user.displayName, 'avatar': user.avatar, 'email': user.email, 'uid': user.uid}
+        }
+	}
+
+	async getDoc(uid: string, collection: string): Promise<DocumentData> {
+        console.log(`Searching user ${uid}...`)
+		const docRef = doc(db, collection, uid);
+		const docSnap = await getDoc(docRef);
+		if (!docSnap.exists()) {
+			throw `User ${uid} not found.`;
+		}
+		return docSnap.data();
+	}
+
+	write(inputCollection: string, data: any) {
+		switch (typeof data) {
+			case 'object':
+				addDoc(collection(db, inputCollection), data);
+				break;
+
+			case 'string':
+				try {
+					const importArray: object[] = JSON.parse(data);
+					importArray.forEach((obj) => {
+						addDoc(collection(db, inputCollection), obj);
+					});
+				} catch {
+					const importObject = JSON.parse(data);
+					addDoc(collection(db, inputCollection), importObject);
+				}
 		}
 	}
 }

@@ -19,8 +19,8 @@ export class NavbarComponent implements OnInit {
 
 	constructor(private fs: FirestoreService) {}
 
-	ngOnInit(): void {
-		this.user = this.fs.auth.current();
+	async ngOnInit() {
+		this.user = await this.fs.auth.current();
 	}
 
 	async login() {
