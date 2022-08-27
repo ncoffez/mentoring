@@ -20,7 +20,7 @@ export class MockService {
             avatar: faker.image.avatar(),
             pitch: `Hi, ich heisse ${firstName} und gehe seit Jahren gerne an Netzwerk Events. Mittlerweile kenne ich Frauen auf allen Karrierestufen und so öffnen sich immer wieder neue Türen. Gerne helfe ich bei den ersten Schritten im Netzwerklen. Unterhalten können wir uns auf deutsch, englisch oder französisch.`,
             skills: faker.helpers.arrayElements(this.skills, this.random()),
-            job: faker.helpers.arrayElement(this.skills)
+            job: faker.helpers.arrayElement(this.jobs)
         }
         this.fs.write('mentors', data)
     }

@@ -29,44 +29,133 @@ h2 {
 }
 
 .header {
-	display: flex;
-	flex-direction: row;
-	padding: 0;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	width: 100%;
 	img {
-		width: 850px;
+		width: 100%;
 		aspect-ratio: 1;
 		object-fit: cover;
 	}
 	.header-details {
 		background-color: #f5f5f5e5;
-        width: calc(32% - 1.5em);
+		width: calc(100% - 3em);
+		height: calc(100% - 3em);
+
 		padding: 1.5em;
 		display: flex;
 		flex-direction: column;
+
+		.day {
+			font-size: 1.8em;
+		}
+
+		.company {
+			font-size: 0.9em;
+		}
 
 		a {
 			text-decoration-line: none;
 		}
 
 		.price {
-			margin-top: auto;
 			display: block;
+			margin-top: auto;
+			margin-bottom: 1em;
+		}
+
+		.register {
+			width: 100%;
 		}
 	}
 }
 
-.register {
-	padding: .7em 0;
-	align-content: flex-end;
+.content {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
 
-	button {
-		width: 32%;
-        margin-left: auto;
-        display: block;
+.article {
+	padding: 2em;
+
+	h2 {
+		margin-block: 1em;
+	}
+
+	p {
+		color: #6f7287;
+		margin-block: 0 4em;
+		line-height: 1.4em;
+		font-size: 1.1em;
 	}
 }
 
-.content {
-    display: flex;
-    flex-direction: row;
+.article {
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	h3 {
+		font-weight: 400;
+	}
+
+	.mentor-card {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		padding: 1.5em;
+		background-color: #f3f3f3;
+
+		img {
+			border-radius: 100%;
+		}
+
+		.col2 {
+			margin-block: auto;
+		}
+
+		.mentor-name {
+			font-size: 1.4em;
+			line-height: 1em;
+		}
+
+		.mentor-job {
+			margin-top: 0.5em;
+			color: rgba(0, 0, 0, 0.6);
+			margin-bottom: 1em;
+		}
+
+		#interessen {
+			color: rgba(0, 0, 0, 0.5);
+			margin-bottom: 1.5em;
+		}
+
+		.col3 {
+			margin-block: auto;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			justify-content: center;
+
+			button {
+				width: 100%;
+				// padding-block: 1em;
+			}
+		}
+	}
+}
+
+.sidebar {
+	padding: 3.5em 2em 2em 2em;
+	display: flex;
+	flex-direction: column;
+	gap: 5em;
+
+	h3 {
+		margin-top: 0;
+	}
+
+	.infos {
+		display: grid;
+		grid-template-columns: 25px 1fr;
+		column-gap: 1em;
+	}
 }
