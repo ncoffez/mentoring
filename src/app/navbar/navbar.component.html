@@ -5,23 +5,10 @@
 			<a routerLink="{{ page.link }}">{{ page.name }}</a>
 		</li>
 	</ul>
-	<div id="user">
-		<button mat-icon-button [matMenuTriggerFor]="menu" yPosition="above">
-			<mat-icon>account_circle</mat-icon>
-		</button>
-		<mat-menu #menu="matMenu">
-			<button mat-menu-item>
-				<mat-icon>login</mat-icon>
-				<span>Einloggen</span>
-			</button>
-			<button mat-menu-item>
-				<mat-icon>logout</mat-icon>
-				<span>Ausloggen</span>
-			</button>
-			<button mat-menu-item>
-				<mat-icon>settings</mat-icon>
-				<span>Einstellungen</span>
-			</button>
-		</mat-menu>
+	<div class="avatar" *ngIf="user" (click)="logout()">
+		<img class="avatar-img" [src]="user.avatar" [alt]="user.name" referrerpolicy="no-referrer" />
+	</div>
+	<div class="placeholder-avatar" *ngIf="!user" (click)="login()">
+		<mat-icon size="large" *ngIf="!user">person_circle</mat-icon>
 	</div>
 </content>

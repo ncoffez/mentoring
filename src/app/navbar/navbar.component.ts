@@ -1,22 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { FirestoreService } from '../services/firestore.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+	selector: 'app-navbar',
+	templateUrl: './navbar.component.html',
+	styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-    pages = [
-        {name: "Home", link: "/"},
-        {name: "Events", link: "/Events"},
-        {name: "Role Models", link: "/RoleModels"},
-        {name: "Sponsoring", link: "/Sponsoring"},
-        {name: "Über uns", link: "/About"},
-    ]
+	user: any;
 
-  constructor() { }
+	pages = [
+		{ name: 'Home', link: '/' },
+		{ name: 'Events', link: '/Events' },
+		{ name: 'Role Models', link: '/RoleModels' },
+		{ name: 'Sponsoring', link: '/Sponsoring' },
+		{ name: 'Über uns', link: '/About' },
+	];
 
-  ngOnInit(): void {
-  }
+	constructor(private fs: FirestoreService) {}
 
+	ngOnInit(): void {
+		this.user = this.fs.auth.current();
+	}
+
+	async login() {
+        await this.fs.auth.login();
+        this.user = this.fs.auth.current();
+	}
+
+    logout(): any {
+        this.fs.auth.logout();
+        this.user = null;
+    }
 }
