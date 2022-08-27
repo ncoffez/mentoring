@@ -36,4 +36,12 @@ export class EventsComponent implements OnInit {
 		xhr.send();
 		*/
 	}
+
+	calcDuration(startStr: string, endStr: string) {
+		const startVal = Date.parse(startStr);
+		const endVal = Date.parse(endStr);
+
+		const duration = (endVal - startVal);
+		return duration; //in milliseconds
+	}
 }

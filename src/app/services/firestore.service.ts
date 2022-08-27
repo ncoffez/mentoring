@@ -37,14 +37,6 @@ export class FirestoreService {
 		register: () => console.log('Company was registered.'), //TODO
 	};
 
-	mock = {
-		event: {
-			add: () => console.log('Adding new mock event.'), //TODO
-			get: () => console.log('Get list of select mock events'), //TODO
-			remove: () => console.log('Removing mock event'), //TODO
-		},
-	};
-
 	async userLogin(): Promise<any> {
 		await signInWithPopup(auth, this.provider)
 			.then(async (result) => {
@@ -97,6 +89,25 @@ export class FirestoreService {
 
 	async createUser(user: any) {
 		return await setDoc(doc(db, 'users', user.uid), user);
+	}
+
+    write(inputCollection: string, data: any) {
+		switch (typeof data) {
+			case 'object':
+				addDoc(collection(db, inputCollection), data);
+				break;
+
+			case 'string':
+				try {
+					const importArray: object[] = JSON.parse(data);
+					importArray.forEach((obj) => {
+						addDoc(collection(db, inputCollection), obj);
+					});
+				} catch {
+					const importObject = JSON.parse(data);
+					addDoc(collection(db, inputCollection), importObject);
+				}
+		}
 	}
 
 	async setDoc(type: string, uid: string, key: string, value: any): Promise<any> {

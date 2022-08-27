@@ -9,7 +9,10 @@
 			<div class="content">
 				<h4>{{ event.name }}</h4>
 				<div class="footer">
-					<div class="card-date">{{ event.start | localdate }}</div>
+					<div class="card-date">
+                        {{ event.start | localdate }}<br>
+                        {{ calcDuration(event.start, event.end)|duration}}
+                        </div>
 					<div class="rechts">
 						<div class="card-location">{{ event.venue_location_summary }}</div>
 						<div class="preis">{{ event.price }}</div>

@@ -12,9 +12,9 @@ export class NavbarComponent implements OnInit {
 	pages = [
 		{ name: 'Home', link: '/' },
 		{ name: 'Events', link: '/Events' },
-		{ name: 'Role Models', link: '/RoleModels' },
-		{ name: 'Sponsoring', link: '/Sponsoring' },
-		{ name: 'Über uns', link: '/About' },
+		{ name: 'Role Models', link: '' },
+		{ name: 'Sponsoring', link: '' },
+		{ name: 'Über uns', link: '' },
 	];
 
 	constructor(private fs: FirestoreService) {}
