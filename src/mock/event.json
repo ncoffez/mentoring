@@ -1,328 +1,79 @@
 {
-    "pagination": {
-        "object_count": 4,
-        "page_number": 1,
-        "page_size": 50,
-        "page_count": 1,
-        "has_more_items": false
-    },
     "events": [
         {
-            "name": {
-                "text": "Digital Nomad Conference 2022 - EN",
-                "html": "Digital Nomad Conference 2022 - EN"
-            },
-            "description": {
-                "text": "The 5th Digital Nomad Conference Switzerland! In Impact Hub Bern as well as online!",
-                "html": "The 5th Digital Nomad Conference Switzerland! In Impact Hub Bern as well as online!"
-            },
+            "name": "Bärn häckt - Vom Spinner zum Winner",
+            "description": "The 5th Digital Nomad Conference Switzerland! In Impact Hub Bern as well as online!",
             "url": "https://www.eventbrite.ch/e/digital-nomad-conference-2022-en-tickets-331078503717",
-            "start": {
-                "timezone": "Europe/Zurich",
-                "local": "2022-10-01T13:30:00",
-                "utc": "2022-10-01T11:30:00Z"
-            },
-            "end": {
-                "timezone": "Europe/Zurich",
-                "local": "2022-10-01T18:30:00",
-                "utc": "2022-10-01T16:30:00Z"
-            },
-            "organization_id": "78209334725",
-            "created": "2022-04-30T08:25:23Z",
-            "changed": "2022-08-26T17:59:29Z",
-            "published": "2022-04-30T08:37:42Z",
-            "capacity": null,
-            "capacity_is_custom": null,
-            "status": "live",
-            "currency": "CHF",
-            "listed": true,
-            "shareable": true,
-            "online_event": false,
-            "tx_time_limit": 1200,
-            "hide_start_date": false,
-            "hide_end_date": false,
-            "locale": "en_US",
-            "is_locked": false,
-            "privacy_setting": "unlocked",
-            "is_series": false,
-            "is_series_parent": false,
-            "inventory_type": "limited",
-            "is_reserved_seating": false,
-            "show_pick_a_seat": false,
-            "show_seatmap_thumbnail": false,
-            "show_colors_in_seatmap_thumbnail": false,
-            "source": "coyote",
-            "is_free": false,
-            "version": null,
+            "start": "2022-09-26T13:30:00",
+            "end": "2022-10-01T18:30:00",
             "summary": "The 5th Digital Nomad Conference Switzerland! In Impact Hub Bern as well as online!",
-            "facebook_event_id": null,
-            "logo_id": "276078929",
-            "organizer_id": "16880848528",
-            "venue_id": "95035799",
-            "category_id": "101",
-            "subcategory_id": "1999",
-            "format_id": "1",
-            "id": "331078503717",
-            "resource_uri": "https://www.eventbriteapi.com/v3/events/331078503717/",
-            "is_externally_ticketed": false,
-            "logo": {
-                "crop_mask": {
-                    "top_left": {
-                        "x": 0,
-                        "y": 0
-                    },
-                    "width": 1920,
-                    "height": 960
-                },
-                "original": {
-                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F276078929%2F78209334725%2F1%2Foriginal.20220430-092058?auto=format%2Ccompress&q=75&sharp=10&s=d4c8fb67c374700c66af62bb478025cc",
-                    "width": 1920,
-                    "height": 1080
-                },
-                "id": "276078929",
-                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F276078929%2F78209334725%2F1%2Foriginal.20220430-092058?h=200&w=450&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1920%2C960&s=cb76febc67af8a83aa5aa3c68ded7282",
-                "aspect_ratio": "2",
-                "edge_color": null,
-                "edge_color_set": true
-            }
+            "organizor": "Bärn Hackt",
+            "venue_location_summary": "Berner FH • Bern",
+            "price": "Gratis",
+            "logo_url": "src/assets/bern_hackt.png"          
         },
         {
-            "name": {
-                "text": "Startups Mentorship Program",
-                "html": "Startups Mentorship Program"
-            },
-            "description": {
-                "text": "Join This Startup Business Mentorship Event Today !",
-                "html": "Join This Startup Business Mentorship Event Today !"
-            },
-            "url": "https://www.eventbrite.com/e/startups-mentorship-program-tickets-261358098107",
-            "start": {
-                "timezone": "Europe/Zurich",
-                "local": "2022-09-10T09:00:00",
-                "utc": "2022-09-10T07:00:00Z"
-            },
-            "end": {
-                "timezone": "Europe/Zurich",
-                "local": "2022-09-10T10:00:00",
-                "utc": "2022-09-10T08:00:00Z"
-            },
-            "organization_id": "475884429765",
-            "created": "2022-02-02T20:06:44Z",
-            "changed": "2022-02-02T20:06:44Z",
-            "published": "2020-09-20T08:52:14Z",
-            "capacity": null,
-            "capacity_is_custom": null,
-            "status": "live",
-            "currency": "EUR",
-            "listed": true,
-            "shareable": false,
-            "online_event": false,
-            "tx_time_limit": 480,
-            "hide_start_date": false,
-            "hide_end_date": false,
-            "locale": "en_US",
-            "is_locked": false,
-            "privacy_setting": "unlocked",
-            "is_series": true,
-            "is_series_parent": false,
-            "inventory_type": "limited",
-            "is_reserved_seating": false,
-            "show_pick_a_seat": false,
-            "show_seatmap_thumbnail": false,
-            "show_colors_in_seatmap_thumbnail": false,
-            "source": "coyote",
-            "is_free": false,
-            "version": null,
-            "summary": "Join This Startup Business Mentorship Event Today !",
-            "facebook_event_id": null,
-            "logo_id": "133687669",
-            "organizer_id": "31226845439",
-            "venue_id": "53275667",
-            "category_id": "101",
-            "subcategory_id": "1001",
-            "format_id": "9",
-            "id": "261358098107",
-            "resource_uri": "https://www.eventbriteapi.com/v3/events/261358098107/",
-            "is_externally_ticketed": false,
-            "series_id": "121908743333",
-            "logo": {
-                "crop_mask": {
-                    "top_left": {
-                        "x": 0,
-                        "y": 0
-                    },
-                    "width": 2160,
-                    "height": 1080
-                },
-                "original": {
-                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F133687669%2F475883336163%2F1%2Foriginal.20210428-191833?auto=format%2Ccompress&q=75&sharp=10&s=3c1abc66496d17c0082a2c75ace4bf4e",
-                    "width": 2160,
-                    "height": 1080
-                },
-                "id": "133687669",
-                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F133687669%2F475883336163%2F1%2Foriginal.20210428-191833?h=200&w=450&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=01f547764c956fb8af73584fbfec7ca1",
-                "aspect_ratio": "2",
-                "edge_color": "#ce9fb9",
-                "edge_color_set": true
-            }
+            "name": "Warum Alpakas besser netzwerken als wir",
+            "description": "Alpakas sind erstaunliche Tiere, welche uns mit ihrer Kommunikation um Längen voraus sind. Wir lernen an diesem Anlass das Verhalten der Alpakas kennen und finden parallelen zu unserem eigenen Netzwerkverhalten.",
+            "url": "",
+            "start": "2022-09-29T18:00:00",
+            "end": "2022-09-29T20:30:00",
+            "summary": "",
+            "organizor": "Be Like Grace",
+            "venue_location_summary": "Tierpark Dählhölzli • Bern",
+            "venue_location_name": "Tierpark Dählhölzli",
+            "venue_location_adress": "Tierparkweg 1",
+            "venue_location_city": "3005 Bern",
+            "price": "Gratis",
+            "logo_url": ""          
         },
         {
-            "name": {
-                "text": "Deine Superkräfte in der Arbeitswelt 4.0 - Girls Getting Started #4/22",
-                "html": "Deine Superkräfte in der Arbeitswelt 4.0 - Girls Getting Started #4/22"
-            },
-            "description": {
-                "text": "Wie du mit Nadja zu deinen Superkräfte findest.",
-                "html": "Wie du mit Nadja zu deinen Superkräfte findest."
-            },
-            "url": "https://www.eventbrite.ch/e/deine-superkrafte-in-der-arbeitswelt-40-girls-getting-started-422-tickets-324854607877",
-            "start": {
-                "timezone": "Europe/Zurich",
-                "local": "2022-09-22T18:15:00",
-                "utc": "2022-09-22T16:15:00Z"
-            },
-            "end": {
-                "timezone": "Europe/Zurich",
-                "local": "2022-09-22T20:45:00",
-                "utc": "2022-09-22T18:45:00Z"
-            },
-            "organization_id": "193153034534",
-            "created": "2022-04-21T12:44:29Z",
-            "changed": "2022-08-17T11:46:46Z",
-            "published": "2022-04-21T12:47:10Z",
-            "capacity": null,
-            "capacity_is_custom": null,
-            "status": "live",
-            "currency": "CHF",
-            "listed": true,
-            "shareable": true,
-            "online_event": false,
-            "tx_time_limit": 1200,
-            "hide_start_date": false,
-            "hide_end_date": false,
-            "locale": "de_CH",
-            "is_locked": false,
-            "privacy_setting": "unlocked",
-            "is_series": false,
-            "is_series_parent": false,
-            "inventory_type": "limited",
-            "is_reserved_seating": false,
-            "show_pick_a_seat": false,
-            "show_seatmap_thumbnail": false,
-            "show_colors_in_seatmap_thumbnail": false,
-            "source": "coyote",
-            "is_free": true,
-            "version": null,
-            "summary": "Wie du mit Nadja zu deinen Superkräfte findest.",
-            "facebook_event_id": null,
-            "logo_id": "270585199",
-            "organizer_id": "44972407523",
-            "venue_id": "93693869",
-            "category_id": "101",
-            "subcategory_id": "1010",
-            "format_id": "12",
-            "id": "324854607877",
-            "resource_uri": "https://www.eventbriteapi.com/v3/events/324854607877/",
-            "is_externally_ticketed": false,
-            "logo": {
-                "crop_mask": {
-                    "top_left": {
-                        "x": 0,
-                        "y": 187
-                    },
-                    "width": 8000,
-                    "height": 4000
-                },
-                "original": {
-                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F270585199%2F193153034534%2F1%2Foriginal.20220421-124443?auto=format%2Ccompress&q=75&sharp=10&s=8928f61dc329e0f123c38eacbc53404a",
-                    "width": 8001,
-                    "height": 4500
-                },
-                "id": "270585199",
-                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F270585199%2F193153034534%2F1%2Foriginal.20220421-124443?h=200&w=450&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C187%2C8000%2C4000&s=95e89c6e0786cea98dac45b6e9317611",
-                "aspect_ratio": "2",
-                "edge_color": "#6fa044",
-                "edge_color_set": true
-            }
+            "name": "Warum ist (digitales Netzwerken für Frauen besonders wichtig?",
+            "description": "",
+            "url": "",
+            "start": "2022-08-24T18:00:00",
+            "end": "2022-09-29T22:30:00",
+            "summary": "",
+            "organizor": "",
+            "venue_location_summary": "Impact Hub Bern • Bern",
+            "price": "Ab Fr. 12.-",
+            "logo_url": "src/assets/din.png"          
         },
         {
-            "name": {
-                "text": "ZID Entrepreneur Circle mit Sandra Neumann",
-                "html": "ZID Entrepreneur Circle mit Sandra Neumann"
-            },
-            "description": {
-                "text": "ZID Entrepreneur Circle: Über die Motivation, den gut bezahlten Job in der Industrie zu kündigen, um ein eigenes Startup zu gründen.",
-                "html": "ZID Entrepreneur Circle: Über die Motivation, den gut bezahlten Job in der Industrie zu kündigen, um ein eigenes Startup zu gründen."
-            },
-            "url": "https://www.eventbrite.ch/e/zid-entrepreneur-circle-mit-sandra-neumann-tickets-308606629737",
-            "start": {
-                "timezone": "Europe/Zurich",
-                "local": "2022-09-08T17:00:00",
-                "utc": "2022-09-08T15:00:00Z"
-            },
-            "end": {
-                "timezone": "Europe/Zurich",
-                "local": "2022-09-08T18:15:00",
-                "utc": "2022-09-08T16:15:00Z"
-            },
-            "organization_id": "266284603983",
-            "created": "2022-03-28T12:09:46Z",
-            "changed": "2022-07-22T11:32:40Z",
-            "published": "2022-03-29T11:26:42Z",
-            "capacity": null,
-            "capacity_is_custom": null,
-            "status": "live",
-            "currency": "CHF",
-            "listed": true,
-            "shareable": true,
-            "online_event": false,
-            "tx_time_limit": 1200,
-            "hide_start_date": false,
-            "hide_end_date": false,
-            "locale": "de_DE",
-            "is_locked": false,
-            "privacy_setting": "unlocked",
-            "is_series": false,
-            "is_series_parent": false,
-            "inventory_type": "limited",
-            "is_reserved_seating": false,
-            "show_pick_a_seat": false,
-            "show_seatmap_thumbnail": false,
-            "show_colors_in_seatmap_thumbnail": false,
-            "source": "coyote",
-            "is_free": false,
-            "version": null,
-            "summary": "ZID Entrepreneur Circle: Über die Motivation, den gut bezahlten Job in der Industrie zu kündigen, um ein eigenes Startup zu gründen.",
-            "facebook_event_id": null,
-            "logo_id": "256294719",
-            "organizer_id": "18401263450",
-            "venue_id": "90158109",
-            "category_id": "101",
-            "subcategory_id": "1001",
-            "format_id": "10",
-            "id": "308606629737",
-            "resource_uri": "https://www.eventbriteapi.com/v3/events/308606629737/",
-            "is_externally_ticketed": false,
-            "logo": {
-                "crop_mask": {
-                    "top_left": {
-                        "x": 0,
-                        "y": 95
-                    },
-                    "width": 2240,
-                    "height": 1120
-                },
-                "original": {
-                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F256294719%2F325598436637%2F1%2Foriginal.20220328-161635?auto=format%2Ccompress&q=75&sharp=10&s=9edd8f9b904175fa212f46976c173c8d",
-                    "width": 2240,
-                    "height": 1260
-                },
-                "id": "256294719",
-                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F256294719%2F325598436637%2F1%2Foriginal.20220328-161635?h=200&w=450&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C95%2C2240%2C1120&s=aaa4b5b685687e73c65d018bbb5aa4e8",
-                "aspect_ratio": "2",
-                "edge_color": "#698bb3",
-                "edge_color_set": true
-            }
-        }
+            "name": "Deine Superkräfte in der Arbeitswelt 4.0",
+            "description": "",
+            "url": "",
+            "start": "2022-09-22T18:15:00",
+            "end": "2022-09-29T22:30:00",
+            "summary": "",
+            "organizor": "",
+            "venue_location_summary": "Liip AG • Bern",
+            "price": "Free",
+            "logo_url": "src/assets/super.png"          
+        },
+        {
+            "name": "ZID Entrepreneur Circle mit Sandra Neumann",
+            "description": "",
+            "url": "",
+            "start": "2022-09-08T17:00:00",
+            "end": "2022-09-29T22:30:00",
+            "summary": "",
+            "organizor": "",
+            "venue_location_summary": "ZID Bernapark • Deisswil",
+            "price": "Ab Fr. 25.-",
+            "logo_url": "src/assets/zid.png"          
+        },
+        {
+            "name": "Digital Nomad Conference 2022 - EN",
+            "description": "",
+            "url": "",
+            "start": "2022-10-01T13:30:00",
+            "end": "2022-09-29T22:30:00",
+            "summary": "",
+            "organizor": "Bärn Hackt",
+            "venue_location_summary": "Impact Hub Bern • Bern",
+            "price": "Ab Fr. 11.24",
+            "logo_url": "src/assets/herhack.png"          
+        }        
     ]
 }
