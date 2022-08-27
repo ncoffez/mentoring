@@ -10,7 +10,7 @@
             "organizor": "Bärn Hackt",
             "venue_location_summary": "Berner FH • Bern",
             "price": "Gratis",
-            "logo_url": "src/assets/bern_hackt.png"  ,
+            "logo_url": "assets/bern_hackt.png"  ,
             "tags": []        
         },
         {
@@ -26,7 +26,7 @@
             "venue_location_adress": "Tierparkweg 1",
             "venue_location_city": "3005 Bern",
             "price": "Gratis",
-            "logo_url": "src/assets/alpaka.png",
+            "logo_url": "assets/alpaka.png",
             "tags": ["Events in der Schweiz", "Events im Kanton Bern", "Bundesstadt: Networking", "#womenintech", "#networking", "Events in der Bundeshauptstadt","#womeninit", "Alpakas"]       
         },
         {
@@ -39,7 +39,7 @@
             "organizor": "",
             "venue_location_summary": "Impact Hub Bern • Bern",
             "price": "Ab Fr. 12.-",
-            "logo_url": "src/assets/din.png",
+            "logo_url": "assets/din.png",
             "tags": []      
         },
         {
@@ -52,7 +52,7 @@
             "organizor": "",
             "venue_location_summary": "Liip AG • Bern",
             "price": "Free",
-            "logo_url": "src/assets/super.png" ,
+            "logo_url": "assets/super.png" ,
             "tags": []        
         },
         {
@@ -65,7 +65,7 @@
             "organizor": "",
             "venue_location_summary": "ZID Bernapark • Deisswil",
             "price": "Ab Fr. 25.-",
-            "logo_url": "src/assets/zid.png",
+            "logo_url": "assets/zid.png",
             "tags": []       
         },
         {
@@ -78,7 +78,7 @@
             "organizor": "Bärn Hackt",
             "venue_location_summary": "Impact Hub Bern • Bern",
             "price": "Ab Fr. 11.24",
-            "logo_url": "src/assets/herhack.png",
+            "logo_url": "assets/herhack.png",
             "tags": []        
         }        
     ]
