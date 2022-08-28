@@ -74,9 +74,7 @@ export class FirestoreService {
 		const user: any = auth.currentUser;
 		if (user)
 			try {
-				console.log('Before getUser');
 				let userDB = await this.user.get(user.uid);
-				console.log('After getUser');
 				return userDB;
 			} catch {
 				return { name: user.displayName, avatar: user.avatar, email: user.email, uid: user.uid };

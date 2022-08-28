@@ -35,8 +35,8 @@
 					<mat-chip-list id="skills">
 						<mat-chip *ngFor="let skill of mentor.skills">{{ skill }}</mat-chip>
 					</mat-chip-list>
-					<div id="mentor-footer">
-                        {{mentor.name.split(" ")[0]}} und du teilen 6 Interessen
+					<div id="mentor-footer" *ngIf="mentor.matches > 0">
+                        {{mentor.name.split(" ")[0]}} und du teilen {{mentor.matches}} Interessen
                         </div>
 				</div>
 				<div class="col3">
