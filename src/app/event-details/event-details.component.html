@@ -1,7 +1,7 @@
 <div class="banner">
 	<h1>{{ title.banner }}</h1>
 </div>
-<div class="main">
+<div class="main" *ngIf="event">
 	<h2>{{ title.subtitle }}</h2>
 	<div class="header">
 		<img src="{{ event.logo_url }}" alt="" />
@@ -37,7 +37,7 @@
 					</mat-chip-list>
 				</div>
 				<div class="col3">
-					<button mat-raised-button color="light">Profil anzeigen</button>
+					<button mat-raised-button color="light" routerLink="/User/{{mentor.id}}">Profil anzeigen</button>
 					<button mat-raised-button color="primary">Als Mentorin anfragen</button>
 				</div>
 			</div>

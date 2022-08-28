@@ -1,22 +1,67 @@
 <div class="banner">
-    <h1>{{ title.banner }}</h1>
+	<h1>{{ title.banner }}</h1>
 </div>
-<div class="main">
-    <h2>{{ title.subtitle }}</h2>
-    <div class="header">
-        <img src="{{ mentor.avatar }}" alt="" />
-        <div class="col2">
-            <h3>{{mentor.name}}</h3>
-            <p>{{mentor.job}}</p>
-        </div>
-        <div class="col3">{{mentor.pitch}}</div>
-    </div>
-    <hr/>
-    <div class="skills">
-        <h4>Interessen</h4>
-        <mat-chip-list>
-            <mat-chip *ngFor="let skill of mentor.skills">{{ skill }}</mat-chip>
-        </mat-chip-list>
-    </div>
-    <img src="assets/dummy_profile_part.png" />
+<div class="main" *ngIf="mentor">
+	<h2>{{ title.subtitle }}</h2>
+	<div class="mentor-card">
+		<img src="{{ mentor.avatar }}" alt="{{ mentor.name }}" />
+		<div class="col2">
+			<div id="name">{{ mentor.name }}</div>
+			<div id="job">{{ mentor.job }}</div>
+			<div class="social-links">
+				<mat-icon>linkedin</mat-icon>
+				<mat-icon>person</mat-icon>
+				<mat-icon>mail</mat-icon>
+			</div>
+		</div>
+		<div class="col3">
+			<div id="pitch">{{ mentor.pitch }}</div>
+		</div>
+	</div>
+	<div class="article">
+		<div class="metadata" id="skills">
+			<h3>Interessen</h3>
+			<mat-chip-list>
+				<mat-chip *ngFor="let skill of mentor.skills">{{ skill }}</mat-chip>
+			</mat-chip-list>
+		</div>
+		<div class="metadata" id="activity">
+			<h3>Mentorenaktivität über das Jahr</h3>
+			<img src="" alt="" id="activity" />
+		</div>
+		<div class="metadata" id="map">
+			<h3>Geographische Verteilung</h3>
+			<img src="" alt="" id="map" />
+		</div>
+		<div class="metadata" id="events">
+			<h3>Events und Mentees</h3>
+			<img src="" alt="" id="donut" />
+		</div>
+		<div class="metadata" id="voting">
+            <h3>Reviews</h3>
+			<div class="vote-card">
+				<img src="" alt="" />
+				<p>{{ mentor.name }} hat mir die Welt der Hackatons gezeigt und mir den Einstieg erleichert.</p>
+			</div>
+			<div class="vote-card">
+				<img src="" alt="" />
+				<p>Dank {{ mentor.name }} habe 3 potentielle Arbeitgeber kennen gelernt. Ihr riesiges Netzwerk ist sehr wertvoll!</p>
+			</div>
+		</div>
+		<div class="metadata" id="reviews">
+            <h3>Awards</h3>
+			<div class="review-card" *ngFor="let skill of mentor.skills">
+				<mat-chip>{{ skill }}</mat-chip>
+				<img src="" alt="Liste der Reviewer" />
+			</div>
+		</div>
+	</div>
+	<div class="planned-events">
+		<h2>Angemeldete Events</h2>
+		<div class="event-card" *ngFor="let event of events">
+			<ul>
+				<li>{{ event.name }}</li>
+			</ul>
+		</div>
+	</div>
 </div>

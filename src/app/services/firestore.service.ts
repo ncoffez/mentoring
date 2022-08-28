@@ -53,6 +53,7 @@ export class FirestoreService {
 				const userShort = { name: user.displayName, uid: user.uid, email: user.email, avatar: user.photoURL };
 				try {
 					await this.user.get(user.uid);
+                    this.user.set(user.uid, "avatar", user.photoURL)
 				} catch (error) {
 					this.user.add(userShort);
 				}
@@ -83,7 +84,6 @@ export class FirestoreService {
 	}
 
 	async getDoc(uid: string, collection: string): Promise<DocumentData> {
-		console.log(`Searching user ${uid}...`);
 		const docRef = doc(db, collection, uid);
 		const docSnap = await getDoc(docRef);
 		if (!docSnap.exists()) {
