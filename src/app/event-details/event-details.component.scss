@@ -103,9 +103,20 @@ h2 {
 		grid-template-columns: 1fr 2fr 1fr;
 		padding: 1.5em;
 		background-color: #f3f3f3;
+        border-radius: 1em;
+
+        #mentor-footer {
+            margin-top: 1em;
+            font-size: .8em;
+        }
+
+.col1 {
+    margin-block: auto;
+}
 
 		img {
 			border-radius: 100%;
+            width: 80%;
 		}
 
 		.col2 {

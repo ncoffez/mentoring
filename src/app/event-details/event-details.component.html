@@ -24,7 +24,7 @@
 		<div class="article">
 			<h2>Zu diesem Event</h2>
 			<p>{{ event.description }}</p>
-			<h3>Mentorin finden</h3>
+			<h2>Mentorin finden</h2>
 			<div class="mentor-card" *ngFor="let mentor of mentors">
 				<div class="col1">
 					<img src="{{ mentor.avatar }}" alt="{{ mentor.name }}" />
@@ -35,9 +35,12 @@
 					<mat-chip-list id="skills">
 						<mat-chip *ngFor="let skill of mentor.skills">{{ skill }}</mat-chip>
 					</mat-chip-list>
+					<div id="mentor-footer">
+                        {{mentor.name.split(" ")[0]}} und du teilen 6 Interessen
+                        </div>
 				</div>
 				<div class="col3">
-					<button mat-raised-button color="light" routerLink="/User/{{mentor.id}}">Profil anzeigen</button>
+					<button mat-raised-button color="light" routerLink="/User/{{ mentor.id }}">Profil anzeigen</button>
 					<button mat-raised-button color="primary">Als Mentorin anfragen</button>
 				</div>
 			</div>

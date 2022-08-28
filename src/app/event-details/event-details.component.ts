@@ -24,4 +24,6 @@ export class EventDetailsComponent implements OnInit {
 		};
         this.mentors = await this.fs.mentor.list();
 	}
+
+    
 }
