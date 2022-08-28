@@ -36,7 +36,6 @@ export class MentorDetailsComponent implements OnInit {
 
 		this.testimonials = faker.helpers.arrayElements(this.allTestimonials, 2);
 		this.confirmations = new Array(this.mentor.skills.length).fill('a').map((a) => this.getConfirmations());
-		console.log(this.confirmations);
 	}
 
 	getConfirmations(): any {

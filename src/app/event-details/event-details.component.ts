@@ -24,12 +24,10 @@ export class EventDetailsComponent implements OnInit {
 			banner: 'Events',
 			subtitle: this.event.organizor,
 		};
-		console.log('🤩 User: ', this.user);
 		this.mentors = await this.fs.mentor.list();
 		if (this.user?.skills.length > 0) {
 			this.mentors = this.mentors.map((mentor: any) => {
 				mentor.matches = this.findMatches(mentor.skills, this.user.skills);
-				console.log(mentor);
 				return mentor;
 			});
 		}
@@ -39,11 +37,9 @@ export class EventDetailsComponent implements OnInit {
 
 	findMatches(userSkills: string[], mentorSkills: string[]): number {
 		let matches = 0;
-
 		for (let mentorSkill of mentorSkills) {
 			if (userSkills.includes(mentorSkill)) matches++;
 		}
-
 		return matches;
 	}
 }
