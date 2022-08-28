@@ -27,24 +27,24 @@
 		</div>
 		<div class="metadata" id="activity">
 			<h3>Mentorenaktivität über das Jahr</h3>
-			<img src="" alt="" id="activity" />
+			<img src="assets/chart.png" alt="" id="activity" />
 		</div>
 		<div class="metadata" id="map">
 			<h3>Geographische Verteilung</h3>
-			<img src="" alt="" id="map" />
+			<img src="assets/map.png" alt="" id="map" />
 		</div>
 		<div class="metadata" id="events">
 			<h3>Events und Mentees</h3>
-			<img src="" alt="" id="donut" />
+			<img src="assets/donut.png" alt="" id="donut" />
 		</div>
 		<div class="metadata" id="voting">
             <h3>Reviews</h3>
 			<div class="vote-card">
-				<img src="" alt="" />
+				<img src="assets/{{testimonial_1}}" alt="" />
 				<p>{{ mentor.name }} hat mir die Welt der Hackatons gezeigt und mir den Einstieg erleichert.</p>
 			</div>
 			<div class="vote-card">
-				<img src="" alt="" />
+				<img src="assets/{{testimonial_2}}" alt="" />
 				<p>Dank {{ mentor.name }} habe 3 potentielle Arbeitgeber kennen gelernt. Ihr riesiges Netzwerk ist sehr wertvoll!</p>
 			</div>
 		</div>
@@ -52,7 +52,7 @@
             <h3>Awards</h3>
 			<div class="review-card" *ngFor="let skill of mentor.skills">
 				<mat-chip>{{ skill }}</mat-chip>
-				<img src="" alt="Liste der Reviewer" />
+				<img src="assets/{{confirmation}}" alt="Liste der Reviewer"  *ngFor="let confirmation of confirmations" />
 			</div>
 		</div>
 	</div>

@@ -64,19 +64,36 @@ img {
 }
 
 .article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2em;
 
-    .metadata {
-        min-height: 300px;
-        width: calc(100% - 4em);
-        background-color: #f1f1f1;
-        border-radius: 2em;
-        padding: 2em;
+	.metadata {
+		width: calc(100% - 4em);
+		background-color: #f1f1f1;
+		border-radius: 2em;
+		padding: 2em;
 
-        h3 {
-            margin-top: 0;
-        }
-    }
+		h3 {
+			margin-top: 0;
+		}
+
+		img {
+			width: 100%;
+			margin-top: 0em;
+		}
+
+		.vote-card {
+			img {
+				width: 2em;
+			}
+		}
+	}
+
+	.review-card {
+		img {
+			width: 2em;
+			margin-right: -1em;
+		}
+	}
 }
