@@ -38,29 +38,33 @@
 			<img src="assets/donut.png" alt="" id="donut" />
 		</div>
 		<div class="metadata" id="voting">
-            <h3>Reviews</h3>
-			<div class="vote-card">
-				<img src="assets/{{testimonial_1}}" alt="" />
-				<p>{{ mentor.name }} hat mir die Welt der Hackatons gezeigt und mir den Einstieg erleichert.</p>
-			</div>
-			<div class="vote-card">
-				<img src="assets/{{testimonial_2}}" alt="" />
-				<p>Dank {{ mentor.name }} habe 3 potentielle Arbeitgeber kennen gelernt. Ihr riesiges Netzwerk ist sehr wertvoll!</p>
+			<h3>Reviews</h3>
+			<div id="cards">
+				<div class="vote-card">
+					<img [src]="testimonials[0]" />
+					<p>{{ mentor.name }} hat mir die Welt der Hackatons gezeigt und mir den Einstieg erleichert.</p>
+				</div>
+				<div class="vote-card">
+					<img [src]="testimonials[1]" alt="" />
+					<p>Dank {{ mentor.name }} habe 3 potentielle Arbeitgeber kennen gelernt. Ihr riesiges Netzwerk ist sehr wertvoll!</p>
+				</div>
 			</div>
 		</div>
-		<div class="metadata" id="reviews">
-            <h3>Awards</h3>
-			<div class="review-card" *ngFor="let skill of mentor.skills">
-				<mat-chip>{{ skill }}</mat-chip>
-				<img src="assets/{{confirmation}}" alt="Liste der Reviewer"  *ngFor="let confirmation of confirmations" />
+		<div class="metadata">
+			<h3>Awards</h3>
+			<div id="awards">
+				<div class="review-card" *ngFor="let skill of mentor.skills; let i = index">
+					<mat-chip>{{ skill }}</mat-chip>
+					<img [src]="avatar" *ngFor="let avatar of confirmations[i]" />
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="planned-events">
 		<h2>Angemeldete Events</h2>
-		<div class="event-card" *ngFor="let event of events">
+		<div class="event-card">
 			<ul>
-				<li>{{ event.name }}</li>
+				<li *ngFor="let event of events">{{ event.name }}</li>
 			</ul>
 		</div>
 	</div>

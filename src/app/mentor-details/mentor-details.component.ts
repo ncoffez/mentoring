@@ -14,10 +14,11 @@ export class MentorDetailsComponent implements OnInit {
 	title: any;
 	events: any;
 	confirmations: any;
-	testimonial_1:any;
-	testimonial_2:any;
-	
-	constructor(private activatedRoute: ActivatedRoute, private fs: FirestoreService) { }
+	allTestimonials: any = ['assets/BG-0.png', 'assets/BG-1.png', 'assets/BG-2.png', 'assets/BG-3.png', 'assets/BG-4.png'];
+
+	testimonials: any;
+
+	constructor(private activatedRoute: ActivatedRoute, private fs: FirestoreService) {}
 
 	async ngOnInit() {
 		this.title = {
@@ -25,20 +26,19 @@ export class MentorDetailsComponent implements OnInit {
 			subtitle: 'Mentorin',
 		};
 		const now = new Date();
-		this.events = events.events.filter((event) => {
-			const timeToEvent = Date.parse(event.start) > now.getUTCMilliseconds();
-			console.log(timeToEvent);
-		});
+		this.events = faker.helpers.arrayElements(events.events, 3);
 		const mentorId = this.activatedRoute.snapshot.paramMap.get('id')!;
 		this.mentor = await this.fs.mentor.get(mentorId);
 
-		/*this.confirmations = [{
-			"skill": "bla",
-			"persons": faker.helpers.arrayElements(["BG-1.png", "BG-2.png", "BG-3.png", "BG-4.png", "BG-2.png"])
-		}];*/
-		this.confirmations = faker.helpers.arrayElements(["BG-1.png", "BG-2.png", "BG-3.png", "BG-4.png", "BG-2.png"]);
-		let testimonials = faker.helpers.arrayElements(["BG-1.png", "BG-2.png", "BG-3.png", "BG-4.png", "BG-2.png"], 2);
-		this.testimonial_1 = testimonials[0];
-		this.testimonial_2 = testimonials[1];
+		this.testimonials = faker.helpers.arrayElements(this.allTestimonials, 2);
+		this.confirmations = new Array(this.mentor.skills.length).fill('a').map((a) => this.getConfirmations());
+		console.log(this.confirmations);
+	}
+
+	getConfirmations(): any {
+		// returns between 1-5 images in an array
+		const amount = Math.floor(Math.random() * 4 + 1);
+		const confirmations = faker.helpers.arrayElements(this.allTestimonials, amount);
+		return confirmations;
 	}
 }
