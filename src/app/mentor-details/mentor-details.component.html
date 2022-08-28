@@ -63,9 +63,7 @@
 	<div class="planned-events">
 		<h2>Angemeldete Events</h2>
 		<div class="event-card">
-			<ul>
-				<li *ngFor="let event of events">{{ event.name }}</li>
-			</ul>
+			<img src={{event_path}} *ngFor="let event_path of event_paths" />
 		</div>
 	</div>
 </div>

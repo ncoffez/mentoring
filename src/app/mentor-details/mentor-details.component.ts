@@ -18,6 +18,10 @@ export class MentorDetailsComponent implements OnInit {
 
 	testimonials: any;
 
+	event_paths = ['assets/Frame 1.png',
+	'assets/Frame 2.png',
+	'assets/Frame 3.png'];
+
 	constructor(private activatedRoute: ActivatedRoute, private fs: FirestoreService) {}
 
 	async ngOnInit() {
